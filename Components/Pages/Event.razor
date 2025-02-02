@@ -1,0 +1,17 @@
+﻿@page "/event"
+@page "/event/{Name}"
+@attribute [StreamRendering]
+
+
+<PageTitle>@Name</PageTitle>
+    <h1>@Name</h1>
+
+<p>This page will provide a summary of the @Name event, as well as a section for the full dialog similar to the koumakan wiki page </p>
+
+
+
+@code {
+    [Parameter]
+    public string Name { get; set; } = "";
+
+}
