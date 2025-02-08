@@ -1,10 +1,15 @@
 using AzurLaneLoreWiki.Components;
+using AzurLaneLoreWiki.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("DB_WikiContents");
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddDbContextFactory<DB_WikiContentsContext>(options => options.UseSqlite(connectionString));
 
 var app = builder.Build();
 
