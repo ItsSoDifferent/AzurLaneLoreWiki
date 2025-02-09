@@ -19,5 +19,6 @@ namespace AzurLaneLoreWiki.Data
 
         public DbSet<Character> Characters { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<CharacterQuote> CharacterQuotes { get; set; }
     }
 }
